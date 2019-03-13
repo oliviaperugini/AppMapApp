@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/userView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/username"
+        android:textSize="12pt"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/passView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="none"
+        android:text="@string/password"
+        android:textSize="12pt"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:inputType="textPersonName|textEmailAddress"
+        android:text="Username/Email"
+        app:layout_constraintBottom_toTopOf="@+id/passView"
+        app:layout_constraintStart_toStartOf="@+id/userView"
+        app:layout_constraintTop_toBottomOf="@+id/userView"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="646dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/passView"
+        app:layout_constraintTop_toBottomOf="@+id/passView"
+        android:importantForAutofill="no" />
+
+</android.support.constraint.ConstraintLayout>

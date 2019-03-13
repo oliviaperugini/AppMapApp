@@ -24,6 +24,8 @@
                 <category android:name="android.intent.action.ACTION_VIEW"/>
             </intent-filter>
         </activity>
+        <activity android:name=".Userpass" />
+
 
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
