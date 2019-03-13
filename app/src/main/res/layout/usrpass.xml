@@ -55,4 +55,13 @@
         app:layout_constraintTop_toBottomOf="@+id/passView"
         android:importantForAutofill="no" />
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="178dp"
+        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>
