@@ -21,8 +21,6 @@ public class MainActivity extends Activity {
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
 
         setContentView(R.layout.activity_main);
-        //MapView myMapView = (MapView) findViewById(R.id.map);
-
 
         // OSM Map Initialize
         // important! set your user agent to prevent getting banned from the osm servers
@@ -31,13 +29,22 @@ public class MainActivity extends Activity {
         map.setTileSource(TileSourceFactory.MAPNIK);
 
         IMapController mapController = map.getController();
-        mapController.setZoom(17);
-        GeoPoint startPoint = new GeoPoint(36.214201, -81.679850);
-        mapController.setCenter(startPoint);
+        startMapView(mapController);
+        //mapController.setZoom(17);
+        //GeoPoint startPoint = new GeoPoint(36.214201, -81.679850);
+        //mapController.setCenter(startPoint);
 
 
 
         // Setup MapView
         //setupMapView();
     }
+
+    public void startMapView(IMapController mc) {
+        mc.setZoom(17);
+        GeoPoint startPoint = new GeoPoint(36.214201, -81.679850);
+        mc.setCenter(startPoint);
+    }
+
+
 }

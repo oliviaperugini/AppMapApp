@@ -48,5 +48,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:/>
+        />
 </android.support.constraint.ConstraintLayout>
