@@ -16,6 +16,9 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.api.IMapController;
+import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow;
+import org.osmdroid.views.overlay.Marker;
+
 
 
 public class MainActivity extends Activity {
@@ -23,6 +26,8 @@ public class MainActivity extends Activity {
     IMapController mapController;
 
     LocationManager locationManager;
+
+    Marker srcMarker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,8 +50,16 @@ public class MainActivity extends Activity {
         GeoPoint startPoint = new GeoPoint(36.214201, -81.679850);
         mapController.setCenter(startPoint);
 
-        //
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        srcMarker = new Marker(map);
+        GeoPoint srcPoint = new GeoPoint(36.216649, -81.686158);
+        srcMarker.setPosition(srcPoint);
+        srcMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        srcMarker.setTitle("SRC");
+        map.getOverlays().add(srcMarker);
+
+        
 
 
     }

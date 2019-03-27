@@ -13,7 +13,7 @@
         android:layout_marginBottom="10dp"
         android:ems="10"
         android:inputType="none"
-        android:text="@string/app_map_app"
+        android:text="/app_map_app"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toTopOf="@+id/button"
