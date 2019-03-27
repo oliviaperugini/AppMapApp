@@ -20,7 +20,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".Homepage">
+            android:name=".Homepage"
+            android:label="Homepage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,6 +35,23 @@
                 <category android:name="android.intent.action.ACTION_VIEW"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Userpass"
+            android:label="Userpass">
+            <intent-filter>
+                <category android:name="android.intent.category.ACTION_VIEW"/>
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Newuser"
+            android:label="Newuser">
+            <intent-filter>
+                <category android:name="android.intent.category.ACTION_VIEW"/>
+            </intent-filter>
+
+        </activity>
+
 
     </application>
 </manifest>
