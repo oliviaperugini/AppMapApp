@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,12 +10,12 @@
         android:id="@+id/userView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="11dp"
         android:ems="10"
         android:inputType="none"
         android:text="@string/username"
         android:textSize="12pt"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/passView"
@@ -22,11 +23,12 @@
         android:layout_height="0dp"
         android:ems="10"
         android:inputType="none"
+
         android:text="@string/password"
         android:textSize="12pt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="83dp" />
 
     <EditText
         android:id="@+id/editText2"
@@ -35,8 +37,9 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPersonName|textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/userView"
-        tools:layout_editor_absoluteX="0dp" />
+
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="37dp" />
 
     <EditText
         android:id="@+id/editText3"
@@ -45,16 +48,15 @@
         android:ems="10"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passView" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="120dp" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
-
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="166dp" />
 </android.support.constraint.ConstraintLayout>

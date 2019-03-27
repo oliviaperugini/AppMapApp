@@ -6,21 +6,21 @@ import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
 
-public class Userpass extends Activity{
+public class Newuser extends Activity{
 
     Button login;           // button is login button
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.usrpass);
+        setContentView(R.layout.newusr);
 
         // button listener for the login button
-        login = findViewById(R.id.button4);
+        login = findViewById(R.id.button6);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent viewUserpass = new Intent(Userpass.this, Userpass.class);
-                startActivity(viewUserpass);
+                Intent viewNewUser = new Intent(Newuser.this, Newuser.class);
+                startActivity(viewNewUser);
             }
 
         });

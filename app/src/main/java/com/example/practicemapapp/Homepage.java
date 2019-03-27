@@ -21,8 +21,9 @@ public class Homepage extends Activity{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-            }
+                    Intent viewUserpass = new Intent(Homepage.this, Userpass.class);
+                    startActivity(viewUserpass);
+                }
 
         });
 
@@ -31,7 +32,8 @@ public class Homepage extends Activity{
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent viewNewUser = new Intent(Homepage.this, Newuser.class);
+                startActivity(viewNewUser);
             }
 
         });
