@@ -28,6 +28,7 @@ public class MainActivity extends Activity {
     LocationManager locationManager;
 
     Marker srcMarker;
+    Marker walkerMarker;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,10 +57,16 @@ public class MainActivity extends Activity {
         GeoPoint srcPoint = new GeoPoint(36.216649, -81.686158);
         srcMarker.setPosition(srcPoint);
         srcMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        srcMarker.setTitle("SRC");
+        srcMarker.setTitle("Student Recreation Center (SRC)");
         map.getOverlays().add(srcMarker);
 
-        
+        walkerMarker = new Marker(map);
+        GeoPoint walkerPoint = new GeoPoint(36.216868, -81.684925);
+        walkerMarker.setPosition(walkerPoint);
+        walkerMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        walkerMarker.setTitle("Walker Hall");
+        map.getOverlays().add(walkerMarker);
+
 
 
     }
