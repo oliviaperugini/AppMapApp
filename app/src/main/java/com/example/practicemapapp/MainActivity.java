@@ -2,6 +2,7 @@ package com.example.practicemapapp;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.content.Context;
@@ -9,6 +10,8 @@ import android.preference.PreferenceManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.view.View;
+import android.widget.Button;
 import android.support.v4.app.ActivityCompat;
 
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -29,6 +32,7 @@ public class MainActivity extends Activity {
 
     Marker srcMarker;
     Marker walkerMarker;
+    Button navigate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,8 @@ public class MainActivity extends Activity {
         GeoPoint startPoint = new GeoPoint(36.214201, -81.679850);
         mapController.setCenter(startPoint);
 
+
+
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         srcMarker = new Marker(map);
@@ -67,7 +73,17 @@ public class MainActivity extends Activity {
         walkerMarker.setTitle("Walker Hall");
         map.getOverlays().add(walkerMarker);
 
+        navigate = findViewById(R.id.navigate);
+        navigate.bringToFront();
+        navigate.invalidate();
+        navigate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewNavigation = new Intent(MainActivity.this, Navigation.class);
+                startActivity(viewNavigation);
+            }
 
+        });
 
     }
 

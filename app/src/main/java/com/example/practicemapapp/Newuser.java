@@ -19,7 +19,7 @@ public class Newuser extends Activity{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent viewNewUser = new Intent(Newuser.this, Newuser.class);
+                Intent viewNewUser = new Intent(Newuser.this, MainActivity.class);
                 startActivity(viewNewUser);
             }
 
