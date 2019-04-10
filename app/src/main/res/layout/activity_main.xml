@@ -6,8 +6,18 @@
     android:orientation="vertical"
     android:visibility="visible">
 
+    <Button
+        android:id="@+id/navigate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Directions"
+        android:visibility="visible" />
+
     <org.osmdroid.views.MapView
         android:id="@+id/map"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_width="600dp"
+        android:layout_height="515dp">
+
+    </org.osmdroid.views.MapView>
+
 </LinearLayout>
