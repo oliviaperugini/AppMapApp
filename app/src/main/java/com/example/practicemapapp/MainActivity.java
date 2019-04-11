@@ -26,6 +26,7 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.api.IMapController;
+import org.osmdroid.views.MapController;
 import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow;
 import org.osmdroid.views.overlay.Marker; // Used for markers
 import org.osmdroid.views.overlay.OverlayItem;
@@ -36,13 +37,15 @@ import org.osmdroid.views.overlay.OverlayItem;
 public class MainActivity extends Activity {
 
     MapView map;
-    IMapController mapController;
+    //IMapController mapController;
+    MapController mapController;
     LocationManager locationManager;
-    //List<MarkerGeoPair<Marker, GeoPoint>> markerGeoList =
-    //        new ArrayList<MarkerGeoPair<Marker, GeoPoint>>();
+
+    // MARKER & GEOPOINT arraylists
+    ArrayList<Marker> markers;
+    ArrayList<GeoPoint> geopoints;
 
     // MARKERS
-    ArrayList<Marker> markers;
     // Activity centers, food, and larger buildings
     Marker srcMarker;
 
@@ -224,17 +227,15 @@ public class MainActivity extends Activity {
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setMultiTouchControls(true);
-        mapController = map.getController();
+        mapController = (MapController) map.getController();
         mapController.setZoom(17);
         GeoPoint startPoint = new GeoPoint(36.214201, -81.679850);
         mapController.setCenter(startPoint);
 
-
-
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         setMarkers();
   
-        Navigation
+
         navigate = findViewById(R.id.navigate);
         navigate.bringToFront();
         navigate.invalidate();
@@ -252,28 +253,17 @@ public class MainActivity extends Activity {
 
         createMarkerList();
 
-
-
-       // Marker tempM;
-        //GeoPoint tempG;
-        //for (Marker m : markers) {
-        //for ( MarkerGeoPair mg : markerGeoList ) {
-        //    tempM = (Marker) mg.getMarker();
-            //tempG = (GeoPoint) mg.getGeoPoint();
-         //   tempM.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-         //   map.getOverlays().add(tempM);
-            //map.getController().animateTo(tempG);
-        //}
-
         for (Marker m: markers) {
             m.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
             map.getOverlays().add(m);
+
         }
     }
 
     private void createMarkerList() {
 
-        markers = new ArrayList<Marker>();
+        markers = new ArrayList<>();
+        geopoints = new ArrayList<>();
 
         srcMarker = createMarker(srcMarker, srcGeoPoint, 36.216649, -81.686158,
                 "Student Recreation Center (SRC)");
@@ -508,9 +498,14 @@ public class MainActivity extends Activity {
         p = new GeoPoint(lat, lon);
         m.setTitle(title);
         m.setPosition(p);
+        addMarkerAndGeopoint(m, p);
         //m.setIcon(new ColorDrawable(Color.BLUE));
         //m.setIcon(ContextCompat.getDrawable(mContext,R.drawable.order_pin));
         return m;
     }
 
+    private void addMarkerAndGeopoint(Marker m, GeoPoint p) {
+        markers.add(m);
+        geopoints.add(p);
+    }
 }
