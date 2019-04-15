@@ -38,6 +38,7 @@ public class MainActivity extends Activity {
     MapView map;
     IMapController mapController;
     LocationManager locationManager;
+
     //List<MarkerGeoPair<Marker, GeoPoint>> markerGeoList =
     //        new ArrayList<MarkerGeoPair<Marker, GeoPoint>>();
 
@@ -234,7 +235,7 @@ public class MainActivity extends Activity {
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         setMarkers();
   
-        Navigation
+
         navigate = findViewById(R.id.navigate);
         navigate.bringToFront();
         navigate.invalidate();
@@ -512,5 +513,7 @@ public class MainActivity extends Activity {
         //m.setIcon(ContextCompat.getDrawable(mContext,R.drawable.order_pin));
         return m;
     }
+
+
 
 }

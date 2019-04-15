@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,14 +7,14 @@
 
     <TextView
         android:id="@+id/info"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="600dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
         android:ems="10"
         android:inputType="none"
         android:text="Please enter point A and point B. Directions will be given from point A to point B"
         android:textSize="12pt"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/pointAview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,7 +26,7 @@
         android:inputType="none"
         android:text="Point A"
         android:textSize="12pt"
-        app:layout_constraintBottom_toTopOf="@+id/editText4"
+        app:layout_constraintBottom_toTopOf="@+id/pointA"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/info" />
 
@@ -39,15 +38,14 @@
         android:inputType="none"
         android:text="Point B"
         android:textSize="12pt"
-        app:layout_constraintBottom_toTopOf="@+id/editText5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintBottom_toTopOf="@+id/pointB"
+        app:layout_constraintStart_toStartOf="@+id/pointA"
+        app:layout_constraintTop_toBottomOf="@+id/pointA" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/pointA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="83dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/pointBview"
@@ -55,24 +53,23 @@
         app:layout_constraintTop_toBottomOf="@+id/pointAview" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/pointB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="39dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/go"
         app:layout_constraintStart_toStartOf="@+id/pointBview"
         app:layout_constraintTop_toBottomOf="@+id/pointBview" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="191dp"
         android:text="Go"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintStart_toStartOf="@+id/pointB"
+        app:layout_constraintTop_toBottomOf="@+id/pointB" />
 
 </android.support.constraint.ConstraintLayout>
