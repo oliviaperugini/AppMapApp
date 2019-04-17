@@ -51,7 +51,13 @@
             </intent-filter>
 
         </activity>
-
+        <activity
+            android:name=".Navigation"
+            android:label="Navigation">
+            <intent-filter>
+                <category android:name="android.intent.category.ACTION_VIEW"/>
+            </intent-filter>
+        </activity>
 
     </application>
 </manifest>
